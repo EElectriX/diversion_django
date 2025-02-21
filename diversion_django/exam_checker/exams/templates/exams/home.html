@@ -1,0 +1,13 @@
+{% if user.is_authenticated %}
+    <p>Welcome, {{ user.username }}! </p>
+    <form action="{% url 'logout' %}" method="post">
+        {% csrf_token %}
+        <button type="submit">Logout</button>
+    </form>
+{% else %}
+    <p><a href="{% url 'login' %}">Login</a> | <a href="{% url 'register' %}">Register</a></p>
+{% endif %}
+<h1>Welcome to the Exam Checker System</h1>
+<a href="{% url 'upload_sheet' %}">Upload Answer Sheet</a>
+<br>
+<a href="{% url 'evaluate_sheets' %}">Evaluate Sheets</a>

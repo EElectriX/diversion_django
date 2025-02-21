@@ -1,0 +1,5 @@
+{% for sheet in sheets %}
+    <p>{{ sheet.student.username }} - <a href="{{ sheet.file.url }}">View</a> - <a href="{% url 'mark_sheet' sheet.id %}">Mark</a></p>
+    <p>Marks Given: {{ sheet.marks }}</p>
+
+{% endfor %}
